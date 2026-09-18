@@ -1,6 +1,6 @@
 -- ==========================================================
 -- AEROINDEX DATABASE SCHEMA (PostgreSQL 15+)
--- Ministry of Civil Aviation / SIH 2026 Reference Architecture
+-- Ministry of Civil Aviation / DGCA National Fare Monitoring System
 -- ==========================================================
 
 -- Enable UUID extension

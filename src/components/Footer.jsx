@@ -6,12 +6,14 @@ export const Footer = () => (
       <div className="flex items-center gap-2">
         <span className="font-semibold text-slate-700">AeroIndex</span>
         <span className="text-slate-300">·</span>
-        <span>Airfare Price Index &amp; Intelligence Platform</span>
+        <span>National Airfare Price Index &amp; Intelligence Platform</span>
       </div>
       <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-wider text-slate-400">
-        <span>Smart India Hackathon 2026</span>
+        <span>Ministry of Civil Aviation (MoCA) — Govt of India</span>
         <span className="text-slate-300">|</span>
-        <span>v1.0</span>
+        <span>DGCA Node #8841</span>
+        <span className="text-slate-300">|</span>
+        <span>v2.8 (2026)</span>
       </div>
     </div>
   </footer>

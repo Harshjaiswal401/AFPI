@@ -21,11 +21,11 @@ export const ReportsPage = () => {
   ];
 
   const savedReports = [
-    { title:'September 2024 — National Airfare Intelligence Report',   date:'Oct 01, 2024', type:'PDF', size:'2.4 MB', status:'Published', statusCls:'bg-emerald-50 text-emerald-700 border-emerald-100' },
-    { title:'Q3 2024 — Route Performance & Index Analysis (JAS)',      date:'Oct 01, 2024', type:'PDF', size:'3.8 MB', status:'Published', statusCls:'bg-emerald-50 text-emerald-700 border-emerald-100' },
-    { title:'August 2024 — Carrier Fare Dispersion Audit',            date:'Sep 02, 2024', type:'PDF', size:'1.9 MB', status:'Archived',  statusCls:'bg-slate-100 text-slate-500 border-slate-200' },
-    { title:'July 2024 — Off-Peak Structural Analysis',               date:'Aug 01, 2024', type:'PDF', size:'1.6 MB', status:'Archived',  statusCls:'bg-slate-100 text-slate-500 border-slate-200' },
-    { title:'October 2024 — Festive Surge Event Log (Draft)',         date:'Oct 14, 2024', type:'PDF', size:'—',     status:'Draft',     statusCls:'bg-amber-50 text-amber-700 border-amber-100' },
+    { title:'September 2026 — National Airfare Intelligence Report',   date:'Sep 19, 2026', type:'PDF', size:'2.4 MB', status:'Published', statusCls:'bg-emerald-50 text-emerald-700 border-emerald-100' },
+    { title:'Q3 2026 — Route Performance & Index Analysis (JAS)',      date:'Sep 01, 2026', type:'PDF', size:'3.8 MB', status:'Published', statusCls:'bg-emerald-50 text-emerald-700 border-emerald-100' },
+    { title:'August 2026 — Carrier Fare Dispersion Audit',            date:'Aug 31, 2026', type:'PDF', size:'1.9 MB', status:'Archived',  statusCls:'bg-slate-100 text-slate-500 border-slate-200' },
+    { title:'July 2026 — Off-Peak Structural Analysis',               date:'Aug 01, 2026', type:'PDF', size:'1.6 MB', status:'Archived',  statusCls:'bg-slate-100 text-slate-500 border-slate-200' },
+    { title:'October 2026 — Festive Surge Event Log (Draft)',         date:'Sep 19, 2026', type:'PDF', size:'—',     status:'Draft',     statusCls:'bg-amber-50 text-amber-700 border-amber-100' },
   ];
 
   const dgcaChecks = [

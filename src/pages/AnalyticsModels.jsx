@@ -1,10 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { seededRandom } from '../utils/seededRandom';
-import { BrainCircuit, TrendingUp, Clock, AlertTriangle, Info, ChevronRight, Download } from 'lucide-react';
+import { BrainCircuit, TrendingUp, Clock, AlertTriangle, Info, ChevronRight, Download, FlaskConical, Scale } from 'lucide-react';
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid,
   AreaChart, Area, BarChart, Bar, Legend, ReferenceLine
 } from 'recharts';
+import { PolicySandbox } from '../components/analytics/PolicySandbox';
+import { ParityMatrix } from '../components/analytics/ParityMatrix';
 
 const LightTooltip = ({ active, payload, label }) => {
   if (!active || !payload?.length) return null;
@@ -29,6 +31,8 @@ export const AnalyticsModels = () => {
     { id:'anomaly',  icon:<AlertTriangle className="w-3.5 h-3.5" />, label:'Statistical Anomaly Radar' },
     { id:'forecast', icon:<TrendingUp className="w-3.5 h-3.5" />,    label:'ARIMA + XGBoost Forecast' },
     { id:'leadtime', icon:<Clock className="w-3.5 h-3.5" />,         label:'Lead-Time Decay Analytics' },
+    { id:'sandbox',  icon:<FlaskConical className="w-3.5 h-3.5" />,  label:'Policy Stress-Test Simulator' },
+    { id:'parity',   icon:<Scale className="w-3.5 h-3.5" />,         label:'OTA Parity & Drip Pricing' },
   ];
 
   /* Anomaly data */
@@ -275,6 +279,20 @@ export const AnalyticsModels = () => {
               </p>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Policy Sandbox Tab */}
+      {tab === 'sandbox' && (
+        <div className="animate-in fade-in duration-200">
+          <PolicySandbox />
+        </div>
+      )}
+
+      {/* OTA Parity & Drip Pricing Tab */}
+      {tab === 'parity' && (
+        <div className="animate-in fade-in duration-200">
+          <ParityMatrix />
         </div>
       )}
     </div>

@@ -39,7 +39,7 @@ let routeBasketWeights = {
 };
 
 let formulaSettings = {
-  anchorDate: '2024-01-15',
+  anchorDate: '2026-01-15',
   baseIndex: 100.0,
   normalizationMethod: 'Median Economy 14-Day',
   minCorridorSampleSize: 10,
@@ -758,10 +758,10 @@ app.get('/api/export/dgca', (req, res) => {
   if (format === 'csv') {
     const headers = 'Route,Carrier,Flight_Number,Travel_Date,Booking_Window,Base_Fare,Tax,Convenience_Fee,Total_Fare,Status,Z_Score\n';
     const rows = liveFareInventory.map(f =>
-      `DEL-BOM,${f.carrier},${f.flight},2024-10-28,T+12,${f.baseFare},${f.tax},${f.convenience},${f.fare},NORMAL,0.42`
+      `DEL-BOM,${f.carrier},${f.flight},2026-09-19,T+12,${f.baseFare},${f.tax},${f.convenience},${f.fare},NORMAL,0.42`
     ).join('\n');
     res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename="DGCA_AeroIndex_Compliance_Audit_2024.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="DGCA_AeroIndex_Compliance_Audit_2026.csv"');
     return res.send(headers + rows);
   }
 

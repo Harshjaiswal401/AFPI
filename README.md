@@ -1,5 +1,5 @@
 # AeroIndex — Airfare Price Index & Intelligence Platform
-**Smart India Hackathon 2026**
+**Ministry of Civil Aviation (MoCA) — Govt of India | DGCA National Fare Monitoring System**
 
 React 19 + Vite + Tailwind CSS + Recharts frontend, Express backend.
 
@@ -23,7 +23,7 @@ All colours live in `tailwind.config.js`:
 |------------|---------------------------------------|------------|
 | `slate`    | Navy-tinted neutrals, sidebar, text   | `900 #0F1C38` |
 | `blue`     | Brand royal blue — primary actions    | `600 #1F4FBF` |
-| `saffron`  | Accent — active nav, index line, SIH  | `500 #F58A1F` |
+| `saffron`  | Accent — active nav, index line       | `500 #F58A1F` |
 
 Because `slate` and `blue` are remapped there, every page follows the theme
 automatically. To rebrand, change those values only.

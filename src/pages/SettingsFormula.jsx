@@ -8,7 +8,7 @@ export const SettingsFormula = () => {
   const [weights, setWeights] = useState({ DEL_BOM:0.22, BLR_DEL:0.18, BOM_BLR:0.14, HYD_DEL:0.12, CCU_DEL:0.10, DEL_GOI:0.08, others:0.16 });
   const [surgeThreshold, setSurgeThreshold] = useState(20);
   const [anomalyZ, setAnomalyZ] = useState(2.0);
-  const [baselineDate] = useState('January 15, 2024');
+  const [baselineDate] = useState('January 15, 2026');
   const [scraperInterval, setScraperInterval] = useState(8);
   const [forecastHorizon, setForecastHorizon] = useState(90);
   const [enableDGCAAlert, setEnableDGCAAlert] = useState(true);

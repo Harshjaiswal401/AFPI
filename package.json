@@ -1,7 +1,7 @@
 {
   "name": "aeroindex-platform",
   "version": "1.0.0",
-  "description": "AeroIndex - Airfare Price Index & Intelligence Platform for India (SIH 2026)",
+  "description": "AeroIndex - Airfare Price Index & Intelligence Platform for India (MoCA & DGCA)",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",

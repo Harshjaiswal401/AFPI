@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Database, Upload, Download, Trash2, CheckCircle, AlertTriangle, Table, RefreshCw, Info } from 'lucide-react';
 import { api } from '../services/api';
+import { DataLedger } from '../components/audit/DataLedger';
 
 export const DataManagement = () => {
   const [isImporting, setIsImporting] = useState(false);
@@ -179,6 +180,9 @@ export const DataManagement = () => {
           </button>
         </div>
       </div>
+
+      {/* Cryptographic Data Ledger */}
+      <DataLedger />
     </div>
   );
 };

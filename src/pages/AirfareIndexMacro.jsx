@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { TrendingUp, Download, FileText, Flame, Clock, AlertTriangle, Info } from 'lucide-react';
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ReferenceLine
@@ -33,7 +33,7 @@ const LightTooltip = ({ active, payload, label }) => {
       {payload.map((p, i) => (
         <div key={i} className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }}></span>
-          <span className="text-slate-500">{p.name === 'y2024' ? '2024 API' : '2023 Benchmark'}:</span>
+          <span className="text-slate-500">{p.name === 'y2026' ? '2026 API' : '2025 Benchmark'}:</span>
           <span className="font-bold text-slate-900">{p.value} pts</span>
         </div>
       ))}
@@ -41,32 +41,32 @@ const LightTooltip = ({ active, payload, label }) => {
   );
 };
 
-export const AirfareIndexMacro = () => {
+export const AirfareIndexMacro = ({ dateRangePreset = '30', refreshTriggerKey = 0 }) => {
   const [showBenchmark, setShowBenchmark] = useState(true);
 
   const macroData = [
-    { date:'Jan 15 (Base)', y2024:100.0, y2023:94.2 },
-    { date:'Feb 01',        y2024:102.4, y2023:96.0 },
-    { date:'Mar 01',        y2024:105.1, y2023:98.4 },
-    { date:'Apr 01',        y2024:108.5, y2023:101.2 },
-    { date:'May 15',        y2024:124.5, y2023:114.8 },
-    { date:'Jun 15',        y2024:106.8, y2023:102.1 },
-    { date:'Jul 15',        y2024:98.5,  y2023:95.0  },
-    { date:'Aug 15',        y2024:104.2, y2023:99.8  },
-    { date:'Sep 16',        y2024:112.1, y2023:104.5 },
-    { date:'Oct 04',        y2024:126.8, y2023:116.2 },
-    { date:'Oct 12',        y2024:118.64,y2023:111.4 },
-    { date:'Nov 01',        y2024:121.2, y2023:115.0 },
+    { date:'Jan 15 (Base)', y2026:100.0, y2025:94.2 },
+    { date:'Feb 01',        y2026:102.4, y2025:96.0 },
+    { date:'Mar 01',        y2026:105.1, y2025:98.4 },
+    { date:'Apr 01',        y2026:108.5, y2025:101.2 },
+    { date:'May 15',        y2026:124.5, y2025:114.8 },
+    { date:'Jun 15',        y2026:106.8, y2025:102.1 },
+    { date:'Jul 15',        y2026:98.5,  y2025:95.0  },
+    { date:'Aug 15',        y2026:104.2, y2025:99.8  },
+    { date:'Sep 16',        y2026:112.1, y2025:104.5 },
+    { date:'Sep 19',        y2026:118.64,y2025:111.4 },
+    { date:'Oct 04 (Fcst)', y2026:126.8, y2025:116.2 },
+    { date:'Nov 01 (Fcst)', y2026:121.2, y2025:115.0 },
   ];
 
   const dailyObs = [
-    { date:'Oct 14, 2024', composite:118.64, change:'+0.42 pts', metro:121.30, tier2:114.20, driver:'ATF Spot Surcharge Revision' },
-    { date:'Oct 13, 2024', composite:118.22, change:'+0.85 pts', metro:120.94, tier2:113.80, driver:'Sunday Pre-Festive Outflow' },
-    { date:'Oct 12, 2024', composite:117.37, change:'−0.14 pts', metro:119.80, tier2:113.40, driver:'Mid-Day Yield Equalization' },
-    { date:'Oct 11, 2024', composite:117.51, change:'+1.12 pts', metro:120.10, tier2:113.15, driver:'Weekend Inventory Compression' },
-    { date:'Oct 10, 2024', composite:116.39, change:'+0.30 pts', metro:118.82, tier2:112.50, driver:'Tier-2 Durga Puja Demand' },
-    { date:'Oct 09, 2024', composite:116.09, change:'−0.48 pts', metro:118.40, tier2:112.20, driver:'Midweek Lean Booking Cycle' },
-    { date:'Oct 08, 2024', composite:116.57, change:'+0.19 pts', metro:118.90, tier2:112.75, driver:'Fleet Capacity Rebalancing' },
+    { date:'Sep 19, 2026', composite:118.64, change:'+0.42 pts', metro:121.30, tier2:114.20, driver:'ATF Spot Surcharge Revision' },
+    { date:'Sep 18, 2026', composite:118.22, change:'+0.85 pts', metro:120.94, tier2:113.80, driver:'Weekend Pre-Festive Outflow' },
+    { date:'Sep 17, 2026', composite:117.37, change:'−0.14 pts', metro:119.80, tier2:113.40, driver:'Mid-Day Yield Equalization' },
+    { date:'Sep 16, 2026', composite:117.51, change:'+1.12 pts', metro:120.10, tier2:113.15, driver:'Weekend Inventory Compression' },
+    { date:'Sep 15, 2026', composite:116.39, change:'+0.30 pts', metro:118.82, tier2:112.50, driver:'Tier-2 Festive Demand Surge' },
+    { date:'Sep 14, 2026', composite:116.09, change:'−0.48 pts', metro:118.40, tier2:112.20, driver:'Midweek Lean Booking Cycle' },
+    { date:'Sep 13, 2026', composite:116.57, change:'+0.19 pts', metro:118.90, tier2:112.75, driver:'Fleet Capacity Rebalancing' },
   ];
 
   return (
@@ -76,19 +76,19 @@ export const AirfareIndexMacro = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <span className="text-[10px] font-mono font-semibold uppercase tracking-widest text-slate-400">
-            Laspeyres Formulation v2.8 · Mathematical Model
+            Laspeyres Formulation v2.8 · DGCA Mathematical Model
           </span>
           <h1 className="text-xl font-bold text-slate-900 mt-0.5">Airfare Price Index (API) Macro Analysis</h1>
           <p className="text-xs text-slate-500 mt-0.5">
-            Standardised capacity-weighted index tracking fare fluctuations vs Jan 2024 baseline (100.0)
+            Standardised capacity-weighted index tracking fare fluctuations vs Jan 2026 baseline (100.0)
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <button onClick={() => api.downloadDGCAExport()}
             className="inline-flex items-center gap-1.5 px-3 py-2 bg-white border border-slate-200 hover:border-slate-300 rounded-lg text-xs font-semibold text-slate-700 shadow-sm transition-colors">
-            <Download className="w-3.5 h-3.5 text-blue-500" />Export CSV
+            <Download className="w-3.5 h-3.5 text-blue-500" />Export DGCA CSV
           </button>
-          <button onClick={() => alert('Downloading Laspeyres Methodology Whitepaper…')}
+          <button onClick={() => alert('Downloading Laspeyres Methodology Whitepaper (DGCA Version 2026)…')}
             className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-xs font-semibold text-white shadow-sm transition-colors">
             <FileText className="w-3.5 h-3.5" />Methodology Whitepaper
           </button>
@@ -98,7 +98,7 @@ export const AirfareIndexMacro = () => {
       {/* 4 KPI cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <KpiCard label="Current Index"      value="118.64" badge="MoM +3.2%"   up={true}  sub="Pre-festive acceleration" />
-        <KpiCard label="30-Day High"        value="126.80" badge="Peak Alert"  up={true}  sub="Recorded Oct 04 — Festival peak" />
+        <KpiCard label="30-Day High"        value="126.80" badge="Peak Forecast" up={true}  sub="Forecasted Oct 04 — Festival peak" />
         <KpiCard label="30-Day Low"         value="112.10" badge="Trough"      up={false} sub="Recorded Sep 16 — Off-season dip" />
         <KpiCard label="Volatility σ"       value="σ 4.82" badge="Moderate"   sub="Gaussian fit — optimal band" />
       </div>
@@ -107,14 +107,14 @@ export const AirfareIndexMacro = () => {
       <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-card">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
           <div>
-            <h2 className="text-sm font-bold text-slate-900">National API Historical Trendline (2024 YTD)</h2>
-            <p className="text-[11px] text-slate-500 mt-0.5">Baseline: Jan 15 2024 = 100.00</p>
+            <h2 className="text-sm font-bold text-slate-900">National API Historical Trendline (2026 YTD)</h2>
+            <p className="text-[11px] text-slate-500 mt-0.5">Baseline: Jan 15 2026 = 100.00</p>
           </div>
           <label className="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
             <input type="checkbox" checked={showBenchmark} onChange={e => setShowBenchmark(e.target.checked)}
               className="rounded border-slate-300 text-blue-600" />
             <span className="w-2 h-2 rounded-sm bg-slate-400 inline-block"></span>
-            Show 2023 benchmark
+            Show 2025 benchmark
           </label>
         </div>
 
@@ -127,9 +127,9 @@ export const AirfareIndexMacro = () => {
               <Tooltip content={<LightTooltip />} />
               <ReferenceLine y={100} stroke="#3768E0" strokeDasharray="3 3"
                 label={{ value:'Base 100', fill:'#3768E0', fontSize:10 }} />
-              <Line type="monotone" dataKey="y2024" name="y2024" stroke="#1F4FBF" strokeWidth={2.5} dot={{ r:3, fill:'#1F4FBF' }} />
+              <Line type="monotone" dataKey="y2026" name="y2026" stroke="#1F4FBF" strokeWidth={2.5} dot={{ r:3, fill:'#1F4FBF' }} />
               {showBenchmark && (
-                <Line type="monotone" dataKey="y2023" name="y2023" stroke="#C6D0E0" strokeWidth={1.5} strokeDasharray="4 4" dot={false} />
+                <Line type="monotone" dataKey="y2025" name="y2025" stroke="#C6D0E0" strokeWidth={1.5} strokeDasharray="4 4" dot={false} />
               )}
             </LineChart>
           </ResponsiveContainer>
@@ -139,7 +139,7 @@ export const AirfareIndexMacro = () => {
         <div className="mt-3 flex items-start gap-2.5 p-3 rounded-lg bg-blue-50 border border-blue-100">
           <Info className="w-4 h-4 text-blue-500 mt-0.5 shrink-0" />
           <div className="text-xs">
-            <span className="font-semibold text-blue-900">Oct 12 — 118.64 pts (+2.1% WoW):</span>
+            <span className="font-semibold text-blue-900">Sep 19, 2026 — 118.64 pts (+2.1% WoW):</span>
             <span className="text-blue-700 ml-1">
               Dominant driver: ATF price adjustment (+1.14 pts) &amp; festive holiday advance booking surge on Northern corridors.
             </span>
@@ -154,10 +154,10 @@ export const AirfareIndexMacro = () => {
         <div className="lg:col-span-2 bg-white border border-slate-200 rounded-xl p-5 shadow-card">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div>
-              <h2 className="text-sm font-bold text-slate-900">Daily Index Observations & Deconstructed Basket</h2>
+              <h2 className="text-sm font-bold text-slate-900">Daily Index Observations &amp; Deconstructed Basket</h2>
               <p className="text-[11px] text-slate-500">Breakdown across metro trunk vs regional network</p>
             </div>
-            <span className="text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-200 px-2 py-1 rounded">Last 7 days</span>
+            <span className="text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-200 px-2 py-1 rounded">Sep 19, 2026 Stream</span>
           </div>
 
           <div className="overflow-x-auto mt-2">
