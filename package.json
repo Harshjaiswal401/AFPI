@@ -1,7 +1,7 @@
 {
-  "name": "aeroindex-platform",
+  "name": "afpi-platform",
   "version": "1.0.0",
-  "description": "AeroIndex - Airfare Price Index & Intelligence Platform for India (MoCA & DGCA)",
+  "description": "AFPI - AirFare PriceIndex platform for India (MoCA & DGCA)",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",

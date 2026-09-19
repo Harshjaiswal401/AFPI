@@ -1,4 +1,5 @@
-# AeroIndex — Airfare Price Index & Intelligence Platform
+# AFPI — AirFare PriceIndex
+**Short name:** AFPI  
 **Ministry of Civil Aviation (MoCA) — Govt of India | DGCA National Fare Monitoring System**
 
 React 19 + Vite + Tailwind CSS + Recharts frontend, Express backend.
@@ -14,6 +15,12 @@ Open http://localhost:3000
 
 Other scripts: `npm run client` (frontend only), `npm run server` (API only),
 `npm run build` / `npm run preview` (production build).
+
+## Brand
+
+- **Full name:** AirFare PriceIndex
+- **Short name:** AFPI
+- **Description:** Airfare Price Intelligence Platform
 
 ## Theme
 
