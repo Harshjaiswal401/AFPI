@@ -1,36 +1,21 @@
 # AFPI — AirFare PriceIndex
-**Short name:** AFPI  
-**Ministry of Civil Aviation (MoCA) — Govt of India | DGCA National Fare Monitoring System**
 
-React 19 + Vite + Tailwind CSS + Recharts frontend, Express backend.
+AFPI is a frontend-only Vite application. It runs in demo mode with local data and does not require an Express backend, database, or API environment variables.
 
-## Run
+## Run locally
 
 ```bash
 npm install
-npm run dev        # starts API (port 5000) and web app (port 3000) together
+npm run dev
 ```
 
-Open http://localhost:3000
+Open the URL shown by Vite, normally http://localhost:5173.
 
-Other scripts: `npm run client` (frontend only), `npm run server` (API only),
-`npm run build` / `npm run preview` (production build).
+## Deploy to Vercel
 
-## Brand
+- Framework preset: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
 
-- **Full name:** AirFare PriceIndex
-- **Short name:** AFPI
-- **Description:** Airfare Price Intelligence Platform
-
-## Theme
-
-All colours live in `tailwind.config.js`:
-
-| Token      | Use                                   | Main value |
-|------------|---------------------------------------|------------|
-| `slate`    | Navy-tinted neutrals, sidebar, text   | `900 #0F1C38` |
-| `blue`     | Brand royal blue — primary actions    | `600 #1F4FBF` |
-| `saffron`  | Accent — active nav, index line       | `500 #F58A1F` |
-
-Because `slate` and `blue` are remapped there, every page follows the theme
-automatically. To rebrand, change those values only.
+The Vercel deployment serves the static frontend. All dashboard data is provided by the browser-local demo service in `src/services/api.js`.
